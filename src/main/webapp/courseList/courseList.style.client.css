@@ -16,3 +16,8 @@ box-shadow: 3px 3px 3px #999;
 right: 18px;
 bottom: 18px;
 }
+
+.small-size{
+	font-size: x-small;
+	float: center;
+}
