@@ -8,7 +8,7 @@ function UserService() {
 
     // POST - Create
     function createUser(user) {
-        return fetch('http://localhost:8080/users', {
+        return fetch('https://fierce-sea-47240.herokuapp.com/admin/users', {
             method: 'POST',
             body: JSON.stringify(user),
             headers: {
@@ -21,7 +21,7 @@ function UserService() {
 
     // GET - Read
     function findAllUsers() {
-        return fetch('http://localhost:8080/users')
+        return fetch('https://fierce-sea-47240.herokuapp.com/admin/users')
             .then(function(response){
                 return response.json()
             })
@@ -30,20 +30,20 @@ function UserService() {
 
 
     function findUserById(id) {
-        return fetch('http://localhost:8080/users/'+id
+        return fetch('https://fierce-sea-47240.herokuapp.com/admin/users/'+id
           ).then(function(response) {
             return response.json();
         });
     }
 
     function deleteUser(id) {
-        return fetch('http://localhost:8080/users/'+id, {
+        return fetch('https://fierce-sea-47240.herokuapp.com/admin/users/'+id, {
             method: "delete"
         }).then(function(response) {});
     }
 
     function updateUser(id, user) {
-        return fetch('http://localhost:8080/users/'+id, {
+        return fetch('https://fierce-sea-47240.herokuapp.com/admin/users/'+id, {
             method: 'PUT',
             body: JSON.stringify(user),
             headers: {
