@@ -28,6 +28,32 @@ public class Widget {
     this.text = text;
   }
 
+  public Widget(Integer id, String name, String type, Integer order, String text) {
+    this.id = id;
+    this.name = name;
+    this.type = WidgetType.getWidgetType(type);
+    this.order = order;
+    this.text = text;
+    size = "Heading 1";
+    dataType = DataType.Unordered_List;
+    src = "";
+  }
+
+  public Widget(Integer id, String name, String type, Integer order, String text, String src, String size, Integer width, Integer height, String cssClass, String stye, String value, DataType dataType) {
+    this.id = id;
+    this.name = name;
+    this.type = WidgetType.getWidgetType(type);
+    this.order = order;
+    this.text = text;
+    this.src = src;
+    this.size = size;
+    this.width = width;
+    this.height = height;
+    this.cssClass = cssClass;
+    this.stye = stye;
+    this.value = value;
+    this.dataType = dataType;
+  }
 
   public Widget() {
   }
