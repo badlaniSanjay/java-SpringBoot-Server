@@ -36,7 +36,7 @@ public class Widget {
     this.text = text;
     size = "Heading 1";
     dataType = DataType.Unordered_List;
-    src = "";
+    src = "https://picsum.photos/300/200";
   }
 
   public Widget(Long id, String name, String type, Integer order, String text, String src,
