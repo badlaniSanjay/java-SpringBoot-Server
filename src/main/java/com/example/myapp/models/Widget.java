@@ -5,7 +5,7 @@ import com.example.myapp.Enums.WidgetType;
 
 public class Widget {
 
-  private Integer id;
+  private Long id;
   private String name;
   private WidgetType type;
   private Integer order;
@@ -20,7 +20,7 @@ public class Widget {
   private DataType dataType;
 
 
-  public Widget(Integer id, String name, WidgetType type, Integer order, String text) {
+  public Widget(Long id, String name, WidgetType type, Integer order, String text) {
     this.id = id;
     this.name = name;
     this.type = type;
@@ -28,7 +28,7 @@ public class Widget {
     this.text = text;
   }
 
-  public Widget(Integer id, String name, String type, Integer order, String text) {
+  public Widget(Long id, String name, String type, Integer order, String text) {
     this.id = id;
     this.name = name;
     this.type = WidgetType.getWidgetType(type);
@@ -39,7 +39,9 @@ public class Widget {
     src = "";
   }
 
-  public Widget(Integer id, String name, String type, Integer order, String text, String src, String size, Integer width, Integer height, String cssClass, String stye, String value, DataType dataType) {
+  public Widget(Long id, String name, String type, Integer order, String text, String src,
+                String size, Integer width, Integer height, String cssClass, String stye,
+                String value, DataType dataType) {
     this.id = id;
     this.name = name;
     this.type = WidgetType.getWidgetType(type);
@@ -58,11 +60,11 @@ public class Widget {
   public Widget() {
   }
 
-  public Integer getId() {
+  public Long getId() {
     return id;
   }
 
-  public void setId(Integer id) {
+  public void setId(Long id) {
     this.id = id;
   }
 

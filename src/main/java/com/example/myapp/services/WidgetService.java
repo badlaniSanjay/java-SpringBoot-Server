@@ -19,11 +19,11 @@ public class WidgetService {
   private static List<Widget> widgets = new ArrayList<Widget>();
 
   static {
-    widgets.add(new Widget(123, "Widget 1", "Heading", 1, "The Heading"));
-    widgets.add(new Widget(234, "Widget 2", "Image", 2, "The image"));
-    widgets.add(new Widget(345, "Widget 3", "List", 3, "List \n of \n items"));
-    widgets.add(new Widget(456, "Widget 4", "Link", 4, "The link"));
-    widgets.add(new Widget(567, "Widget 5", "Paragraph", 5, "The paragraph text"));
+    widgets.add(new Widget(123L, "Widget 1", "Heading", 1, "The Heading"));
+    widgets.add(new Widget(234L, "Widget 2", "Image", 2, "The image"));
+    widgets.add(new Widget(345L, "Widget 3", "List", 3, "List \n of \n items"));
+    widgets.add(new Widget(456L, "Widget 4", "Link", 4, "The link"));
+    widgets.add(new Widget(567L, "Widget 5", "Paragraph", 5, "The paragraph text"));
   }
 
 
@@ -32,7 +32,7 @@ public class WidgetService {
   }
 
 
-  public List<Widget> deleteWidget(Integer widgetId) {
+  public List<Widget> deleteWidget(long widgetId) {
     widgets = widgets
             .stream()
             .filter(widget -> !widget.getId().equals(widgetId))
@@ -45,12 +45,12 @@ public class WidgetService {
     return widgets;
   }
 
-  public Widget findWidgetById(Integer id) {
+  public Widget findWidgetById(long id) {
      Widget particularWidget = widgets.stream().filter(widget -> widget.getId() == id).findAny().get();
      return particularWidget;
   }
 
-  public List<Widget> updateWidget(int wid, Widget widgetTemp) {
+  public List<Widget> updateWidget(long wid, Widget widgetTemp) {
     widgets = widgets.stream().map(temp -> temp.getId() == wid ? widgetTemp: temp).collect(Collectors.toList());
 //    return widgets;
 //    for(Widget temp: widgets){

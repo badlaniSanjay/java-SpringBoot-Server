@@ -34,20 +34,20 @@ public class CourseController {
     return service.createCourse(Course);
   }
 
-  @GetMapping("/api/Courses/{cid}")
+  @GetMapping("/api/courses/{cid}")
   public Course findCourseById(
           @PathVariable("cid") Integer id) {
     return service.findCourseById(id);
   }
 
-  @DeleteMapping("/api/courses/{wid}")
+  @DeleteMapping("/api/courses/{cid}")
   public List<Course> deleteCourse(
-          @PathVariable("wid") Integer CourseId) {
+          @PathVariable("cid") long CourseId) {
     return service.deleteCourse(CourseId);
   }
 
-  @PutMapping("api/courses/{cid}")
-  public List<Course> updateCourse(@PathVariable("cid") int cid, @RequestBody Course Course) {
+  @PutMapping("/api/courses/{cid}")
+  public List<Course> updateCourse(@PathVariable("cid") long cid, @RequestBody Course Course) {
     return service.updateCourse(cid, Course);
   }
 

@@ -16,11 +16,11 @@ public class CourseService {
 
 
   static {
-      courses.add(new Course(123, "Course 1"));
-      courses.add(new Course(234, "Course 2"));
-    courses.add(new Course(345, "Course 3"));
-    courses.add(new Course(456, "Course 4"));
-    courses.add(new Course(567, "Course 5"));
+      courses.add(new Course(123L, "Course 1"));
+      courses.add(new Course(234L, "Course 2"));
+    courses.add(new Course(345L, "Course 3"));
+    courses.add(new Course(456L, "Course 4"));
+    courses.add(new Course(567L, "Course 5"));
   }
 
 
@@ -30,7 +30,7 @@ public class CourseService {
   }
 
 
-  public List<Course> deleteCourse(Integer CourseId) {
+  public List<Course> deleteCourse(long CourseId) {
     courses = courses
             .stream()
             .filter(Course -> !Course.getId().equals(CourseId))
@@ -43,12 +43,12 @@ public class CourseService {
     return courses;
   }
 
-  public Course findCourseById(Integer id) {
+  public Course findCourseById(long id) {
     Course particularCourse = courses.stream().filter(Course -> Course.getId() == id).findAny().get();
     return particularCourse;
   }
 
-  public List<Course> updateCourse(int wid, Course CourseTemp) {
+  public List<Course> updateCourse(long wid, Course CourseTemp) {
     courses = courses.stream().map(temp -> temp.getId() == wid ? CourseTemp: temp).collect(Collectors.toList());
 
     return courses;
