@@ -15,7 +15,7 @@ public class Widget {
 
   @Id
   @GeneratedValue(strategy = GenerationType.IDENTITY)
-  private Long id;
+  private Integer id;
   private String name;
   private WidgetType type;
   private Integer order;
@@ -30,7 +30,7 @@ public class Widget {
   private DataType dataType;
 
 
-  public Widget(Long id, String name, WidgetType type, Integer order, String text) {
+  public Widget(Integer id, String name, WidgetType type, Integer order, String text) {
     this.id = id;
     this.name = name;
     this.type = type;
@@ -38,7 +38,7 @@ public class Widget {
     this.text = text;
   }
 
-  public Widget(Long id, String name, String type, Integer order, String text) {
+  public Widget(Integer id, String name, String type, Integer order, String text) {
     this.id = id;
     this.name = name;
     this.type = WidgetType.getWidgetType(type);
@@ -49,7 +49,7 @@ public class Widget {
     src = "https://picsum.photos/300/200";
   }
 
-  public Widget(Long id, String name, String type, Integer order, String text, String src,
+  public Widget(Integer id, String name, String type, Integer order, String text, String src,
                 String size, Integer width, Integer height, String cssClass, String stye,
                 String value, DataType dataType) {
     this.id = id;
@@ -70,11 +70,11 @@ public class Widget {
   public Widget() {
   }
 
-  public Long getId() {
+  public Integer getId() {
     return id;
   }
 
-  public void setId(Long id) {
+  public void setId(Integer id) {
     this.id = id;
   }
 

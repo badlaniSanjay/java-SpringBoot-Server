@@ -16,23 +16,23 @@ public class Course {
 
   @Id
   @GeneratedValue(strategy = GenerationType.IDENTITY)
-  private Long id;
+  private Integer id;
   private String title;
 
   @OneToMany(mappedBy = "course")
   private List<Module> modules;
 
-  public Course(Long id, String title) {
+  public Course(Integer id, String title) {
     this.id = id;
     this.title = title;
     modules = new ArrayList<>();
   }
 
-  public Long getId() {
+  public Integer getId() {
     return id;
   }
 
-  public void setId(Long id) {
+  public void setId(Integer id) {
     this.id = id;
   }
 
