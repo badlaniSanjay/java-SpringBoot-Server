@@ -3,10 +3,23 @@ package com.example.myapp.models;
 import java.util.ArrayList;
 import java.util.List;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.OneToMany;
+import javax.persistence.Table;
+
+@Entity
+@Table(name="courses")
 public class Course {
 
+  @Id
+  @GeneratedValue(strategy = GenerationType.IDENTITY)
   private Long id;
   private String title;
+
+  @OneToMany(mappedBy = "course")
   private List<Module> modules;
 
   public Course(Long id, String title) {
