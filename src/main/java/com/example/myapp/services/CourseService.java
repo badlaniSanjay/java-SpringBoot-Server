@@ -16,11 +16,11 @@ public class CourseService {
 
 
   static {
-      courses.add(new Course(123L, "Course 1"));
-      courses.add(new Course(234L, "Course 2"));
-    courses.add(new Course(345L, "Course 3"));
-    courses.add(new Course(456L, "Course 4"));
-    courses.add(new Course(567L, "Course 5"));
+      courses.add(new Course(123, "Course 1"));
+      courses.add(new Course(234, "Course 2"));
+    courses.add(new Course(345, "Course 3"));
+    courses.add(new Course(456, "Course 4"));
+    courses.add(new Course(567, "Course 5"));
   }
 
 

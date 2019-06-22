@@ -28,6 +28,9 @@ public class Course {
     modules = new ArrayList<>();
   }
 
+  public Course() {
+  }
+
   public Integer getId() {
     return id;
   }

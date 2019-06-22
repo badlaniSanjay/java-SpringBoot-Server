@@ -19,11 +19,11 @@ public class WidgetService {
   private static List<Widget> widgets = new ArrayList<Widget>();
 
   static {
-    widgets.add(new Widget(123L, "Widget 1", "Heading", 1, "The Heading"));
-    widgets.add(new Widget(234L, "Widget 2", "Image", 2, "The image"));
-    widgets.add(new Widget(345L, "Widget 3", "List", 3, "List \n of \n items"));
-    widgets.add(new Widget(456L, "Widget 4", "Link", 4, "The link"));
-    widgets.add(new Widget(567L, "Widget 5", "Paragraph", 5, "The paragraph text"));
+    widgets.add(new Widget(123, "Widget 1", "Heading", 1, "The Heading"));
+    widgets.add(new Widget(234, "Widget 2", "Image", 2, "The image"));
+    widgets.add(new Widget(345, "Widget 3", "List", 3, "List \n of \n items"));
+    widgets.add(new Widget(456, "Widget 4", "Link", 4, "The link"));
+    widgets.add(new Widget(567, "Widget 5", "Paragraph", 5, "The paragraph text"));
   }
 
 

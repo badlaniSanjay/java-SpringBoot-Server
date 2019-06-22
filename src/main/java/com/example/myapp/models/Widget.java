@@ -18,7 +18,7 @@ public class Widget {
   private Integer id;
   private String name;
   private WidgetType type;
-  private Integer order;
+  private Integer orderNo ;
   private String text;
   private String src;
   private String size;
@@ -30,32 +30,32 @@ public class Widget {
   private DataType dataType;
 
 
-  public Widget(Integer id, String name, WidgetType type, Integer order, String text) {
+  public Widget(Integer id, String name, WidgetType type, Integer orderNo , String text) {
     this.id = id;
     this.name = name;
     this.type = type;
-    this.order = order;
+    this.orderNo  = orderNo ;
     this.text = text;
   }
 
-  public Widget(Integer id, String name, String type, Integer order, String text) {
+  public Widget(Integer id, String name, String type, Integer orderNo , String text) {
     this.id = id;
     this.name = name;
     this.type = WidgetType.getWidgetType(type);
-    this.order = order;
+    this.orderNo  = orderNo ;
     this.text = text;
     size = "Heading 1";
     dataType = DataType.Unordered_List;
     src = "https://picsum.photos/300/200";
   }
 
-  public Widget(Integer id, String name, String type, Integer order, String text, String src,
+  public Widget(Integer id, String name, String type, Integer orderNo , String text, String src,
                 String size, Integer width, Integer height, String cssClass, String stye,
                 String value, DataType dataType) {
     this.id = id;
     this.name = name;
     this.type = WidgetType.getWidgetType(type);
-    this.order = order;
+    this.orderNo  = orderNo ;
     this.text = text;
     this.src = src;
     this.size = size;
@@ -94,12 +94,12 @@ public class Widget {
     this.type = type;
   }
 
-  public Integer getOrder() {
-    return order;
+  public Integer getorderNo () {
+    return orderNo ;
   }
 
-  public void setOrder(Integer order) {
-    this.order = order;
+  public void setorderNo (Integer orderNo ) {
+    this.orderNo  = orderNo ;
   }
 
   public String getText() {
