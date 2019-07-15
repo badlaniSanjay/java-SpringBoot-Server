@@ -11,35 +11,25 @@ import javax.persistence.Id;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
-import javax.persistence.Transient;
 
 @Entity
-@Table(name = "modules")
-public class Module {
+@Table(name = "topics")
+public class Topic {
+
+
   @Id
   @GeneratedValue(strategy = GenerationType.IDENTITY)
   private Integer id;
   private String title;
 
-  @OneToMany(mappedBy = "module")
-  private List<Lesson> lessons;
+  @OneToMany(mappedBy = "topic")
+  private List<Widget> widgets;
+
 
   @ManyToOne
   @JsonIgnore
-  private Course course;
+  private Lesson lesson;
 
-  @Transient
-  public String getCourseTitle() {
-    return course.getTitle();
-  }
-
-  public Course getCourse() {
-    return course;
-  }
-
-  public void setCourse(Course course) {
-    this.course = course;
-  }
 
   public Integer getId() {
     return id;
@@ -57,12 +47,19 @@ public class Module {
     this.title = title;
   }
 
-  public List<Lesson> getLessons() {
-    return lessons;
+  public Lesson getLesson() {
+    return lesson;
   }
 
-  public void setLessons(List<Lesson> lessons) {
-    this.lessons = lessons;
+  public void setLesson(Lesson lesson) {
+    this.lesson = lesson;
+  }
+
+  public List<Widget> getWidgets() {
+    return widgets;
+  }
+
+  public void setWidgets(List<Widget> widgets) {
+    this.widgets = widgets;
   }
 }
-

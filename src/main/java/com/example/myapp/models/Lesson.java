@@ -1,5 +1,6 @@
 package com.example.myapp.models;
 
+
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
 import java.util.List;
@@ -11,35 +12,22 @@ import javax.persistence.Id;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
-import javax.persistence.Transient;
 
 @Entity
-@Table(name = "modules")
-public class Module {
+@Table(name = "lessons")
+public class Lesson {
+
   @Id
   @GeneratedValue(strategy = GenerationType.IDENTITY)
   private Integer id;
   private String title;
 
-  @OneToMany(mappedBy = "module")
-  private List<Lesson> lessons;
+  @OneToMany(mappedBy = "lesson")
+  private List<Topic> topics;
 
   @ManyToOne
   @JsonIgnore
-  private Course course;
-
-  @Transient
-  public String getCourseTitle() {
-    return course.getTitle();
-  }
-
-  public Course getCourse() {
-    return course;
-  }
-
-  public void setCourse(Course course) {
-    this.course = course;
-  }
+  private Module module;
 
   public Integer getId() {
     return id;
@@ -57,12 +45,19 @@ public class Module {
     this.title = title;
   }
 
-  public List<Lesson> getLessons() {
-    return lessons;
+  public List<Topic> getTopics() {
+    return topics;
   }
 
-  public void setLessons(List<Lesson> lessons) {
-    this.lessons = lessons;
+  public void setTopics(List<Topic> topics) {
+    this.topics = topics;
+  }
+
+  public Module getModule() {
+    return module;
+  }
+
+  public void setModule(Module module) {
+    this.module = module;
   }
 }
-

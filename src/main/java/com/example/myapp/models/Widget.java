@@ -2,11 +2,13 @@ package com.example.myapp.models;
 
 import com.example.myapp.Enums.DataType;
 import com.example.myapp.Enums.WidgetType;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 @Entity
@@ -28,6 +30,10 @@ public class Widget {
   private String stye;
   private String value;
   private DataType dataType;
+
+  @ManyToOne
+  @JsonIgnore
+  private Topic topic;
 
 
   public Widget(Integer id, String name, WidgetType type, Integer orderNo , String text) {
@@ -172,5 +178,14 @@ public class Widget {
 
   public void setDataType(DataType dataType) {
     this.dataType = dataType;
+  }
+
+
+  public Topic getTopic() {
+    return topic;
+  }
+
+  public void setTopic(Topic topic) {
+    this.topic = topic;
   }
 }
