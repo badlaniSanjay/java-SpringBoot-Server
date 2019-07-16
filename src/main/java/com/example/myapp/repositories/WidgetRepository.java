@@ -2,6 +2,7 @@ package com.example.myapp.repositories;
 
 
 
+import com.example.myapp.models.Topic;
 import com.example.myapp.models.Widget;
 
 import org.springframework.data.jpa.repository.Query;
@@ -18,4 +19,7 @@ public interface WidgetRepository
 
     @Query("select widget from Widget widget where widget.id=:wid")
     public Widget findWidgetById(@Param("wid") Integer id);
+
+    @Query("select widget from Widget widget where widget.topic.id = :id")
+    public List<Widget> findAllWidgetsForTopic(@Param("id") Integer id);
 }

@@ -58,4 +58,9 @@ public class WidgetController {
     return repository.findAllWidgets();
   }
 
+  @GetMapping("/api/topics/{tid}/widgets")
+  public List<Widget> findAllWidgetsForTopic(@PathVariable("tid") Integer topicId) {
+    return repository.findAllWidgetsForTopic(topicId);
+  }
+
 }
